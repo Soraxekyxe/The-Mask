@@ -16,9 +16,9 @@ public class QTEManager : MonoBehaviour
     public GameObject winCanvas;
 
     [Header("UI")]
-    public TMP_Text stepText;          // "1/10"
-    public Transform arrowsContainer;  // parent des flèches
-    public QTEArrowUI arrowPrefab;     // prefab (Image + QTEArrowUI)
+    public TMP_Text stepText;          
+    public Transform arrowsContainer;  
+    public QTEArrowUI arrowPrefab;      
     public Button closeButton;
 
     [Header("Sprites")]
@@ -29,9 +29,9 @@ public class QTEManager : MonoBehaviour
 
     [Header("Settings")]
     public int totalSteps = 10;
-    public int baseArrowsStep1 = 3; // étape 1 = 3 flèches
-    public int addPerStep = 1;      // +1 par étape
-    public float errorDelay = 1f;   // temps pour voir le rouge
+    public int baseArrowsStep1 = 3; 
+    public int addPerStep = 1;      
+    public float errorDelay = 1f;   
 
     private int currentStep = 1;
     private readonly List<Dir> sequence = new List<Dir>();
@@ -168,14 +168,12 @@ public class QTEManager : MonoBehaviour
                 }
                 else
                 {
-                    // étape suivante => nouvelle séquence
                     StartStep(newSequence: true);
                 }
             }
         }
         else
         {
-            // erreur => rouge visible + restart même étape (même séquence)
             spawnedUI[index].SetWrong();
             StartCoroutine(RestartCurrentStepAfterDelay());
         }
@@ -186,8 +184,7 @@ public class QTEManager : MonoBehaviour
         isWaiting = true;
         yield return new WaitForSeconds(errorDelay);
         isWaiting = false;
-
-        // Restart étape => on garde la même séquence (comme “recommencer l’étape”)
+        
         StartStep(newSequence: false);
     }
 
@@ -213,25 +210,21 @@ public class QTEManager : MonoBehaviour
 
     private bool TryGetDirectionInput(out Dir dir)
     {
-        // Haut : Z (AZERTY) ou W (QWERTY) ou ↑
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             dir = Dir.Up; return true;
         }
-
-        // Bas : S ou ↓
+        
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             dir = Dir.Down; return true;
         }
 
-        // Gauche : Q (AZERTY) ou A (QWERTY) ou ←
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             dir = Dir.Left; return true;
         }
-
-        // Droite : D ou →
+        
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             dir = Dir.Right; return true;
