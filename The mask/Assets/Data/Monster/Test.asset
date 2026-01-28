@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3277d952f7f84a84d8af302a633f27cc, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: Assembly-CSharp::MonsterData
-  Name: Test
-  Distance: 0
-  Sounds: []
+  Name: Cat
+  Distance: 10
+  Walk: 10
+  Sounds:
+  - {fileID: 8300000, guid: 910fd64f5558f1242953b513afdd06b4, type: 3}

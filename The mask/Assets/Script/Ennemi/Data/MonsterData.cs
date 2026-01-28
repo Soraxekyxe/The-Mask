@@ -6,11 +6,12 @@ public class MonsterData : ScriptableObject
 {
     public string Name;
     public float Distance;
+    public float Walk;
 
     [System.Serializable]
     public class Audio
     {
-        public AudioSource Sound;
+        public AudioClip Sound;
     }
 
 public AudioClip[] Sounds;    
