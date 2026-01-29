@@ -12,6 +12,7 @@ public class Ennemi : MonoBehaviour
     public GameObject ennemi;
     int corridor;
     public bool ImHere;
+    public PlayerMaskChecker player;
 
     void Start()
     {
