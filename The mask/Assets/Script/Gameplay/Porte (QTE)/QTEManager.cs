@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,10 @@ public class QTEManager : MonoBehaviour
     public Transform arrowsContainer;  
     public QTEArrowUI arrowPrefab;      
     public Button closeButton;
+    
+    [Header("Scenes")]
+    public string winSceneName = "Win";
+
 
     [Header("Sprites")]
     public Sprite upSprite;
@@ -195,8 +200,11 @@ public class QTEManager : MonoBehaviour
         isWaiting = false;
 
         if (qteCanvas != null) qteCanvas.SetActive(false);
-        if (winCanvas != null) winCanvas.SetActive(true);
+
+        LevelSession.Stop();
+        SceneManager.LoadScene(winSceneName);
     }
+
 
     private void ClearArrows()
     {
