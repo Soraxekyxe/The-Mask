@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 public class MonsterData : ScriptableObject
 {
     public string Name;
+    public int monsterID;
     public float Distance;
     public float Walk;
 

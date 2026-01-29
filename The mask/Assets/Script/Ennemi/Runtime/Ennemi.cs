@@ -13,7 +13,7 @@ public class Ennemi : MonoBehaviour
     public GameObject ennemi;
     private Coroutine walking;
     int corridor;
-    public PlayerMaskChecker player;
+    public Player player;
 
     void Start()
     {

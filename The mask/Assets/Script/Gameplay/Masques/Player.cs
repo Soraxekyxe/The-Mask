@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMaskChecker : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public int currentMaskID = -1;
     public int currentMonsterID = -1;
