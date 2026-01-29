@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class LoseScreenUI : MonoBehaviour
 {
-    public string menuSceneName = "Menu";
+    public string menuSceneName = "Starting";
 
     public void GoMenu()
     {

@@ -41,6 +41,6 @@ public class Counltdo : MonoBehaviour
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
-        coultdownText.text = $"{minutes:00}:{seconds:00}";
+        coultdownText.text = $"{minutes:0}:{seconds:00}";
     }
 }

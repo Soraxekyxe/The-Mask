@@ -5,7 +5,7 @@ using TMPro;
 public class WinScreenUI : MonoBehaviour
 {
     public TMP_Text timeText;
-    public string menuSceneName = "Menu";
+    public string menuSceneName = "Starting";
 
     void Start()
     {
