@@ -7,83 +7,75 @@ using Random = UnityEngine.Random;
 public class Ennemi : MonoBehaviour
 {
     public MonsterData monster;
+    public EnnemiManager ennemiManager;
     public AudioClip clip;
     public AudioSource scream;
     public GameObject ennemi;
+    private Coroutine walking;
     int corridor;
-    public bool ImHere;
     public PlayerMaskChecker player;
 
     void Start()
     {
-        StartCoroutine(Walking());
+        walking = StartCoroutine(StartWalking());
 
+        //Ajoute le son du monstre data dans le l'AudioClip//
         clip = monster.Sounds[0];
-        if (clip != null) ;
-        
+        if (clip != null)
+            
+        //Met le son dans l'audio source//
         scream.clip = clip;
     }
 
-    IEnumerator Walking()
+    //Le code qui gére le déplacement du monstre
+    IEnumerator StartWalking()
     {
         while (true)
         {
+            //Lance un dé pour savoir si le monstre peut bouger//
             int CanMove = Random.Range(0, 10);
             Debug.Log($"Random = {CanMove}" );
-
+            
+            //Regarde si le lancer de dé est bon, si oui alors il bouge//
             if (CanMove <= monster.Walk)
             {
-                Move();
+                corridor++;
+                Debug.Log($"Corridor = {corridor}");
+            }
+            
+            //regarde si le monstre est arrivé dans la salle//
+            if (corridor == monster.Distance)
+            {
+                corridor = 0;
+                Debug.Log($"Corridor = {corridor}");
+                
+                Screamer();
             }
             
             yield return new WaitForSeconds(1f);
         }
     }
-
-    void Move()
-    {
-        corridor++;
-        Debug.Log($"Corridor = {corridor}");
-
-        if (corridor == monster.Distance)
-        {
-            corridor = 0;
-            
-            Screamer();
-            
-        }
-
-        else
-        {
-            Walking();
-        }
-    }
-
+    
     void MaskCheck()
     {
            
     }
 
+    //Le Screamer
     void Screamer()
     {
         Debug.Log("Screamer");
         
-        ImHere = true;
-        
         scream.Play();
         
-        StopAllCoroutines();
+        ennemiManager.Stop();
         
         ennemi.SetActive(true);
     }
-
-    void Awake()
+    
+    //Arréte le déplacement du monstre//
+    public void StopWalking()
     {
-        if (ImHere = true)
-        {
-            StopAllCoroutines();
-        }
-
-        StartCoroutine(Walking());
+        StopCoroutine(walking);
     }
 }
