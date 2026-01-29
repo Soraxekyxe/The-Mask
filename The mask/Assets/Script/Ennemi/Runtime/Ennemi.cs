@@ -15,16 +15,10 @@ public class Ennemi : MonoBehaviour
     int corridor;
     public Player player;
 
+
     void Start()
     {
         walking = StartCoroutine(StartWalking());
-
-        //Ajoute le son du monstre data dans le l'AudioClip//
-        clip = monster.Sounds[0];
-        if (clip != null)
-            
-        //Met le son dans l'audio source//
-        scream.clip = clip;
     }
 
     //Le code qui gére le déplacement du monstre
@@ -42,6 +36,20 @@ public class Ennemi : MonoBehaviour
                 corridor++;
                 Debug.Log($"Corridor = {corridor}");
             }
+
+            if (corridor == 3)
+            {
+                clip = monster.Sounds[0];
+                if (clip != null)
+                {
+                    scream.clip = clip;
+                    scream.volume = 0.05f;
+                    
+                    scream.Play();
+                    
+                    Debug.unityLogger.Log("Ennemi cream");
+                }
+            }
             
             //regarde si le monstre est arrivé dans la salle//
             if (corridor == monster.Distance)
@@ -49,7 +57,7 @@ public class Ennemi : MonoBehaviour
                 corridor = 0;
                 Debug.Log($"Corridor = {corridor}");
                 
-                Screamer();
+                MaskCheck();
             }
             
             yield return new WaitForSeconds(1f);
@@ -58,7 +66,24 @@ public class Ennemi : MonoBehaviour
     
     void MaskCheck()
     {
-           
+        if (player.currentMaskID == monster.monsterID)
+        {
+            Safe();
+        }
+
+        else
+        {
+            Screamer();
+        }
+        
+    }
+
+    void Safe()
+    {
+        Debug.Log("Safe");
+
+        if (ennemi != null)
+            ennemi.SetActive(true);
     }
 
     //Le Screamer
@@ -66,11 +91,21 @@ public class Ennemi : MonoBehaviour
     {
         Debug.Log("Screamer");
         
-        scream.Play();
-        
+        //Ajoute le son du monstre data dans le l'AudioClip//
+        clip = monster.Sounds[0];
+        if (clip != null)
+        {
+            //Met le son dans l'audio source//
+            scream.clip = clip;
+            scream.volume = 1f;
+            
+            scream.Play();
+        }
+
         ennemiManager.Stop();
         
-        ennemi.SetActive(true);
+        if (ennemi != null)
+            ennemi.SetActive(true);
     }
     
     //Arréte le déplacement du monstre//

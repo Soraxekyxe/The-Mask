@@ -12,10 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab41aba3d5564f809cb5ef167b066c84, type: 3}
   m_Name: Test Mask
   m_EditorClassIdentifier: Assembly-CSharp::MaskDatabase
-  masks:
-  - id: 
-    displayName: 
-    description: 
-    icon: {fileID: 0}
-    prefab: {fileID: 0}
-    equipSound: {fileID: 0}
+  Name: Chat Mask
+  maskID: 1
