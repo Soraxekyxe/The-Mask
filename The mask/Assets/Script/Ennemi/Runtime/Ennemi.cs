@@ -55,13 +55,14 @@ public class Ennemi : MonoBehaviour
                     scream.volume = 0.05f;
                     
                     scream.Play();
+                    scream.SetScheduledEndTime(AudioSettings.dspTime + 2f);
                     
                     Debug.Log("Ennemi Scream");
                 }
             }
             
             //Le monstre est proche
-            if (corridor == 8)
+            if (corridor == 6)
             {
                 clip = monster.Sounds[0];
                 if (clip != null)
@@ -70,6 +71,8 @@ public class Ennemi : MonoBehaviour
                     scream.volume = 0.15f;
                     
                     scream.Play();
+                    scream.SetScheduledEndTime(AudioSettings.dspTime + 2f);
+                    
                     Debug.Log("Ennemi et proche");
                 }
             }
@@ -83,7 +86,7 @@ public class Ennemi : MonoBehaviour
                 MaskCheck();
             }
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
         }
     }
     
@@ -130,7 +133,7 @@ public class Ennemi : MonoBehaviour
         if (ennemi != null)
             ennemi.SetActive(true);
         
-        ennemiManager.GameOver();
+        ennemiManager.HeScream();
     }
     
     //Arréte le déplacement du monstre//

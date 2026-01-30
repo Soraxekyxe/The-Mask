@@ -16,6 +16,10 @@ public class EnnemiManager : MonoBehaviour
     
     [Header("Scéne")]
     public string defeatSceneName = "SceneLose";
+    
+    [Header("Coroutine")]
+    private Coroutine WaitMonsterLeave;
+    private Coroutine WaitScreamer;
 
     void Start()
     {
@@ -36,9 +40,31 @@ public class EnnemiManager : MonoBehaviour
             ennemi.StopWalking();
         }
         mouseClick.enabled = false;
-        Debug.Log("Souri ne marche plus");
+        Debug.Log("Souris ne marche plus");
+
+        WaitMonsterLeave = StartCoroutine(WaitMonster());
     }
-    
+
+    IEnumerator WaitMonster()
+    {
+        yield return new WaitForSeconds(2);
+        
+        mouseClick.enabled = true;
+    }
+
+    public void HeScream()
+    {
+        mouseClick.enabled = false;
+        WaitScreamer = StartCoroutine(waitScreamer());
+
+    }
+
+    IEnumerator waitScreamer()
+    {
+        yield return new WaitForSeconds(15);
+        
+        GameOver();
+    }
     public void GameOver()
     {
         SceneManager.LoadScene(defeatSceneName);
