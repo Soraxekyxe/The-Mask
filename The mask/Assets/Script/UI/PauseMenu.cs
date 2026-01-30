@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            UIState.IsAnyPopupOpen = false;
             if (paused)
                 Resume();
             else

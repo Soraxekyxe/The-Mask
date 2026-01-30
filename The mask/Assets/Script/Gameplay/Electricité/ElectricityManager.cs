@@ -105,30 +105,29 @@ public class ElectricityManager : MonoBehaviour
     {
         if (isDead) return;
         if (electricityCanvas != null) electricityCanvas.SetActive(true);
+        UIState.IsAnyPopupOpen = true;
     }
 
     public void CloseCanvas()
     {
         if (electricityCanvas != null) electricityCanvas.SetActive(false);
         isHolding = false;
+        UIState.IsAnyPopupOpen = false;
     }
 
     private IEnumerator LoseSequence()
     {
         if (isDead) yield break;
         isDead = true;
-
-        // ferme le canvas électricité
+        
         if (electricityCanvas != null) electricityCanvas.SetActive(false);
-
-        // screamer visuel + son
         if (screamerOverlay != null) screamerOverlay.SetActive(true);
         if (screamerSound != null) screamerSound.Play();
 
         yield return new WaitForSeconds(screamerDuration);
-
-        // charge la scène défaite
+        
         LevelSession.Stop();
+        UIState.IsAnyPopupOpen = false;
         SceneManager.LoadScene(defeatSceneName);
     }
 }

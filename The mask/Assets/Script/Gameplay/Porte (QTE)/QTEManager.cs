@@ -85,6 +85,7 @@ public class QTEManager : MonoBehaviour
     {
         if (qteCanvas != null) qteCanvas.SetActive(true);
         isRunning = true;
+        UIState.IsAnyPopupOpen = true;
     }
 
     public void CloseQTE()
@@ -96,7 +97,9 @@ public class QTEManager : MonoBehaviour
         ClearArrows();
 
         if (qteCanvas != null) qteCanvas.SetActive(false);
+        UIState.IsAnyPopupOpen = false;
     }
+
 
 
     private void StartStep(bool newSequence)
@@ -202,6 +205,7 @@ public class QTEManager : MonoBehaviour
         if (qteCanvas != null) qteCanvas.SetActive(false);
 
         LevelSession.Stop();
+        UIState.IsAnyPopupOpen = false;
         SceneManager.LoadScene(winSceneName);
     }
 
