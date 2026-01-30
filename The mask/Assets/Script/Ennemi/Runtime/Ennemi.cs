@@ -2,18 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 public class Ennemi : MonoBehaviour
 {
+    [Header("Script")]
     public MonsterData monster;
     public EnnemiManager ennemiManager;
+    public Player player;
+    
+    [Header("Sprite")]
+    public GameObject ennemi;
+    
+    [Header("Audio")]
     public AudioClip clip;
     public AudioSource scream;
-    public GameObject ennemi;
+    
     private Coroutine walking;
     int corridor;
-    public Player player;
+    
 
 
     void Start()
@@ -36,7 +44,8 @@ public class Ennemi : MonoBehaviour
                 corridor++;
                 Debug.Log($"Corridor = {corridor}");
             }
-
+            
+            //Le monstre est loin
             if (corridor == 3)
             {
                 clip = monster.Sounds[0];
@@ -47,7 +56,21 @@ public class Ennemi : MonoBehaviour
                     
                     scream.Play();
                     
-                    Debug.unityLogger.Log("Ennemi cream");
+                    Debug.Log("Ennemi Scream");
+                }
+            }
+            
+            //Le monstre est proche
+            if (corridor == 8)
+            {
+                clip = monster.Sounds[0];
+                if (clip != null)
+                {
+                    scream.clip = clip;
+                    scream.volume = 0.15f;
+                    
+                    scream.Play();
+                    Debug.Log("Ennemi et proche");
                 }
             }
             
@@ -84,6 +107,8 @@ public class Ennemi : MonoBehaviour
 
         if (ennemi != null)
             ennemi.SetActive(true);
+        
+        ennemiManager.Stop();
     }
 
     //Le Screamer
@@ -101,11 +126,11 @@ public class Ennemi : MonoBehaviour
             
             scream.Play();
         }
-
-        ennemiManager.Stop();
         
         if (ennemi != null)
             ennemi.SetActive(true);
+        
+        ennemiManager.GameOver();
     }
     
     //Arréte le déplacement du monstre//

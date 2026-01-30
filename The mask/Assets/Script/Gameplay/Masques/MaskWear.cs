@@ -1,15 +1,19 @@
 using System;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class MaskWear : MonoBehaviour
+public class MaskWear : MonoBehaviour, IPointerDownHandler
 {
+   [Header("Script")]
    public DataMasks masks;
    public Player player;
+   
+   [Header ("Sprite")]
    public GameObject inFace;
    public GameObject masksManager;
 
-   private void OnMouseDown()
+   public void OnPointerDown(PointerEventData click)
    {
       HoldMask();
    }

@@ -2,10 +2,20 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.SceneManagement;
 
 public class EnnemiManager : MonoBehaviour
 {
+    [Header("Ennemi")]
     private readonly List<Ennemi> ennemis = new();
+    
+    [Header("Commande")]
+    public InputSystemUIInputModule mouseClick;
+    
+    [Header("Scéne")]
+    public string defeatSceneName = "SceneLose";
 
     void Start()
     {
@@ -25,5 +35,13 @@ public class EnnemiManager : MonoBehaviour
         {
             ennemi.StopWalking();
         }
+        mouseClick.enabled = false;
+        Debug.Log("Souri ne marche plus");
+    }
+    
+    public void GameOver()
+    {
+        SceneManager.LoadScene(defeatSceneName);
+        Debug.Log("Game Over");
     }
 }

@@ -1,13 +1,17 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class MaskRemove : MonoBehaviour
+public class MaskRemove : MonoBehaviour, IPointerDownHandler
 {
+    [Header("Script")]
     public Player player;
+    
+    [Header("Sprite")]
     public GameObject inFace;
     public GameObject masksManager;
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData click)
     {
         UnHoldMask();
     }
