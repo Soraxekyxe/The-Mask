@@ -90,6 +90,7 @@ public class Ennemi : MonoBehaviour
         }
     }
     
+    //Vérifie si le joueur a le bon masque//
     void MaskCheck()
     {
         if (player.currentMaskID == monster.monsterID)
@@ -103,7 +104,8 @@ public class Ennemi : MonoBehaviour
         }
         
     }
-
+    
+    //Lorsque le joueur porte le bon masque//
     void Safe()
     {
         Debug.Log("Safe");
@@ -112,9 +114,11 @@ public class Ennemi : MonoBehaviour
             ennemi.SetActive(true);
         
         ennemiManager.Stop();
+        
+        Debug.Log("Safe");
     }
 
-    //Le Screamer
+    //Le Screamer//
     void Screamer()
     {
         Debug.Log("Screamer");
@@ -140,5 +144,11 @@ public class Ennemi : MonoBehaviour
     public void StopWalking()
     {
         StopCoroutine(walking);
+    }
+    
+    //Relance la marche//
+    public void ResumeWalking()
+    {
+        walking = StartCoroutine(StartWalking());
     }
 }

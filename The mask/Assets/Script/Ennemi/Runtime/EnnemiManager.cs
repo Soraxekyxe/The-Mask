@@ -44,27 +44,49 @@ public class EnnemiManager : MonoBehaviour
 
         WaitMonsterLeave = StartCoroutine(WaitMonster());
     }
-
+    
+    //Sa permet d'attendre quelque seconde avant que le monstre part (cinématique qui désactive les commandes)//
     IEnumerator WaitMonster()
     {
-        yield return new WaitForSeconds(2);
-        
-        mouseClick.enabled = true;
+        yield return new WaitForSeconds(5);
+         mouseClick.enabled = true;
+
+         foreach (Ennemi ennemi in ennemis)
+         {
+             if (ennemi != null && ennemi.ennemi != null && ennemi.ennemi.activeSelf)
+             {
+                 ennemi.ennemi.SetActive(false);
+                 
+                 Debug.Log("Je part");
+             }
+             
+             ennemi.ResumeWalking();
+         }
+         
+         Debug.Log("Remarché SVP");
     }
 
+    //Lance la cinématique du screamer//
     public void HeScream()
     {
+        foreach (Ennemi ennemi in ennemis)
+        {
+            ennemi.StopWalking();
+        }
         mouseClick.enabled = false;
         WaitScreamer = StartCoroutine(waitScreamer());
 
     }
 
+    //Cinématique du screamer et lance le game over//
     IEnumerator waitScreamer()
     {
         yield return new WaitForSeconds(15);
         
         GameOver();
     }
+    
+    //Le game over//
     public void GameOver()
     {
         SceneManager.LoadScene(defeatSceneName);
