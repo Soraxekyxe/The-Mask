@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Cat
   monsterID: 1
   Distance: 10
-  Walk: 10
+  Walk: 8
   Sounds:
   - {fileID: 8300000, guid: 910fd64f5558f1242953b513afdd06b4, type: 3}

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Test 2
   m_EditorClassIdentifier: Assembly-CSharp::MonsterData
   Name: Cube
+  monsterID: 2
   Distance: 10
-  Walk: 6
+  Walk: 4
   Sounds:
   - {fileID: 8300000, guid: cccee7b783022db458ee6b580e4ded47, type: 3}

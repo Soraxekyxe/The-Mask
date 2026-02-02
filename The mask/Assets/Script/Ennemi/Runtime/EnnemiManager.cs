@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class EnnemiManager : MonoBehaviour
 {
-    [Header("Ennemi")]
+    [Header("Script")]
     private readonly List<Ennemi> ennemis = new();
+    private readonly List<MaskRemove> removesMask = new();
     
     [Header("Commande")]
     public InputSystemUIInputModule mouseClick;
@@ -29,6 +30,13 @@ public class EnnemiManager : MonoBehaviour
         {
             if(ennemi != null && !ennemis.Contains(ennemi))
             ennemis.Add(ennemi);
+        }
+        
+        MaskRemove[] mask = FindObjectsOfType<MaskRemove>(true);
+        foreach (MaskRemove remove in mask)
+        {
+            if(remove != null && !removesMask.Contains(remove))
+                removesMask.Add(remove);
         }
     }
 
@@ -69,6 +77,17 @@ public class EnnemiManager : MonoBehaviour
     //Lance la cinématique du screamer//
     public void HeScream()
     {
+        foreach (MaskRemove removes in removesMask)
+        {
+            if(removes != null)
+            if (removes.inFace.activeSelf)
+            {
+                removes.UnHoldMask();
+                 
+                Debug.Log("Monstre enléve le masque");
+            }
+        }
+        
         foreach (Ennemi ennemi in ennemis)
         {
             ennemi.StopWalking();
