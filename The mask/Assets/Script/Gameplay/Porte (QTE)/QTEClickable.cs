@@ -1,10 +1,10 @@
 using UnityEngine;
-
-public class QTEClickable : MonoBehaviour
+using UnityEngine.EventSystems;
+public class QTEClickable : MonoBehaviour, IPointerDownHandler
 {
     public QTEManager qteManager;
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData click)
     {
         if (qteManager != null)
             qteManager.StartQTE();

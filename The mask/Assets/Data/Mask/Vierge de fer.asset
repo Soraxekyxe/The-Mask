@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab41aba3d5564f809cb5ef167b066c84, type: 3}
-  m_Name: Test Mask
+  m_Name: Vierge de fer
   m_EditorClassIdentifier: Assembly-CSharp::MaskDatabase
-  Name: Chat Mask
+  Name: Masaque vierge de fer
   maskID: 1

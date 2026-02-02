@@ -11,6 +11,9 @@ public class EnnemiManager : MonoBehaviour
     [Header("Script")]
     private readonly List<Ennemi> ennemis = new();
     private readonly List<MaskRemove> removesMask = new();
+    private readonly List<CarréClickable> clickablesCarré = new();
+    public QTEManager qteManager;
+    public ElectricityManager electricityManager;
     
     [Header("Commande")]
     public InputSystemUIInputModule mouseClick;
@@ -38,6 +41,15 @@ public class EnnemiManager : MonoBehaviour
             if(remove != null && !removesMask.Contains(remove))
                 removesMask.Add(remove);
         }
+        
+        CarréClickable[] carré = FindObjectsOfType<CarréClickable>(true);
+        foreach (CarréClickable Square in carré)
+        {
+            if (carré != null && !clickablesCarré.Contains(Square))
+                clickablesCarré.Add(Square);
+            
+            Debug.Log("square: " + Square);
+        }
     }
 
     //Arréte touts les ennemis de la scéne//
@@ -47,6 +59,13 @@ public class EnnemiManager : MonoBehaviour
         {
             ennemi.StopWalking();
         }
+        
+        foreach (CarréClickable Square in clickablesCarré)
+        {
+            if (Square != null)
+                Square.enabled = false;
+        }
+        
         mouseClick.enabled = false;
         Debug.Log("Souris ne marche plus");
 
@@ -77,6 +96,15 @@ public class EnnemiManager : MonoBehaviour
     //Lance la cinématique du screamer//
     public void HeScream()
     {
+        qteManager.CloseQTE();
+        electricityManager.CloseCanvas();
+
+        foreach (CarréClickable Square in clickablesCarré)
+        {
+            if (Square != null)
+                Square.enabled = false;
+        }
+        
         foreach (MaskRemove removes in removesMask)
         {
             if(removes != null)

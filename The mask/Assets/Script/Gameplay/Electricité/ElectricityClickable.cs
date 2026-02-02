@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ElectricityClickable : MonoBehaviour
+public class ElectricityClickable : MonoBehaviour, IPointerDownHandler
 {
     public ElectricityManager electricityManager;
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData click)
     {
         electricityManager.OpenCanvas();
     }
