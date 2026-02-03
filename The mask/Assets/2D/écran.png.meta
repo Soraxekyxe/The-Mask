@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 4ce4663cafd962841b28fcade6ca9756
+guid: bc4166f6277e203408ae77170c43c7c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5895540913150188443
-    second: Left_0
+      213: -4588634352469929885
+    second: "\xE9cran_0"
+  - first:
+      213: 4233377995642444620
+    second: "\xE9cran_1"
+  - first:
+      213: -5069271771158395904
+    second: "\xE9cran_2"
+  - first:
+      213: -2752461598294356447
+    second: "\xE9cran_3"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Left_0
+      name: "\xE9cran_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 565
-        height: 565
+        x: 392
+        y: 5
+        width: 3059
+        height: 2146
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9b591f793b21d150800000000000000
-      internalID: 5895540913150188443
+      spriteID: 36010e83e55e150c0800000000000000
+      internalID: -4588634352469929885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE9cran_1"
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 2142
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b193e8bdaffba30800000000000000
+      internalID: 4233377995642444620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE9cran_2"
+      rect:
+        serializedVersion: 2
+        x: 2071
+        y: 2141
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004403aae2456a9b0800000000000000
+      internalID: -5069271771158395904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\xE9cran_3"
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 1042
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ec2cf62ca4dc9d0800000000000000
+      internalID: -2752461598294356447
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ded3b3f32054ac142b11c585e59c1ce7
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Left_0: 5895540913150188443
+      "\xE9cran_0": -4588634352469929885
+      "\xE9cran_1": 4233377995642444620
+      "\xE9cran_2": -5069271771158395904
+      "\xE9cran_3": -2752461598294356447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

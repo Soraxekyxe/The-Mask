@@ -35,6 +35,8 @@ public class ElectricityManager : MonoBehaviour
     private float currentElectricity;
     private bool isHolding = false;
     private bool isDead = false;
+    
+    private bool isPaused = false;
 
     void Awake()
     {
@@ -54,10 +56,10 @@ public class ElectricityManager : MonoBehaviour
         if (electricityCanvas != null) electricityCanvas.SetActive(false);
         if (screamerOverlay != null) screamerOverlay.SetActive(false);
     }
-
+    
     void Update()
     {
-        if (isDead) return;
+        if (isDead || isPaused) return;
 
         DrainElectricity();
         UpdateUI();
@@ -65,6 +67,7 @@ public class ElectricityManager : MonoBehaviour
         if (currentElectricity <= 0f)
             StartCoroutine(LoseSequence());
     }
+
 
     private void DrainElectricity()
     {
@@ -119,15 +122,23 @@ public class ElectricityManager : MonoBehaviour
     {
         if (isDead) yield break;
         isDead = true;
-        
         if (electricityCanvas != null) electricityCanvas.SetActive(false);
         if (screamerOverlay != null) screamerOverlay.SetActive(true);
         if (screamerSound != null) screamerSound.Play();
-
         yield return new WaitForSeconds(screamerDuration);
-        
         LevelSession.Stop();
         UIState.IsAnyPopupOpen = false;
         SceneManager.LoadScene(defeatSceneName);
+    }
+    
+    public void PauseElectricity()
+    {
+        isPaused = true;
+        isHolding = false;
+    }
+
+    public void ResumeElectricity()
+    {
+        isPaused = false;
     }
 }
