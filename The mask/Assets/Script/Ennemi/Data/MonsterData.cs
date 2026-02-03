@@ -8,6 +8,7 @@ public class MonsterData : ScriptableObject
     public int monsterID;
     public float Distance;
     public float Walk;
+    public AudioClip Scream;
 
     [System.Serializable]
     public class Audio

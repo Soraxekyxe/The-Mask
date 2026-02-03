@@ -18,6 +18,14 @@ public class Ennemi : MonoBehaviour
     [Header("Audio")]
     public AudioClip clip;
     public AudioSource scream;
+
+    [Header("Son")] 
+    public int firts;
+    public int seconds;
+    
+    [Header("Random variable move")]
+    public int randomMax;
+    public int randomMin;
     
     private Coroutine walking;
     int corridor;
@@ -35,7 +43,7 @@ public class Ennemi : MonoBehaviour
         while (true)
         {
             //Lance un dé pour savoir si le monstre peut bouger//
-            int CanMove = Random.Range(0, 10);
+            int CanMove = Random.Range(randomMin, randomMax);
             Debug.Log($"Random = {CanMove}" );
             
             //Regarde si le lancer de dé est bon, si oui alors il bouge//
@@ -46,32 +54,30 @@ public class Ennemi : MonoBehaviour
             }
             
             //Le monstre est loin
-            if (corridor == 3)
+            if (corridor == firts)
             {
-                clip = monster.Sounds[0];
+                clip = monster.Sounds[Random.Range(0, monster.Sounds.Length)];
                 if (clip != null)
                 {
                     scream.clip = clip;
                     scream.volume = 0.05f;
                     
                     scream.Play();
-                    scream.SetScheduledEndTime(AudioSettings.dspTime + 2f);
                     
                     Debug.Log("Ennemi Scream");
                 }
             }
             
             //Le monstre est proche
-            if (corridor == 6)
+            if (corridor == seconds)
             {
-                clip = monster.Sounds[0];
+                clip = monster.Sounds[Random.Range(0, monster.Sounds.Length)];
                 if (clip != null)
                 {
                     scream.clip = clip;
                     scream.volume = 0.15f;
                     
                     scream.Play();
-                    scream.SetScheduledEndTime(AudioSettings.dspTime + 2f);
                     
                     Debug.Log("Ennemi et proche");
                 }

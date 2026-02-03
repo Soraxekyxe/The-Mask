@@ -10,6 +10,10 @@ public class MaskRemove : MonoBehaviour, IPointerDownHandler
     [Header("Sprite")]
     public GameObject inFace;
     public GameObject masksManager;
+    
+    [Header ("Désactiver")]
+    public GameObject qteBox;
+    public GameObject electricBox;
 
     public void OnPointerDown(PointerEventData click)
     {
@@ -21,6 +25,8 @@ public class MaskRemove : MonoBehaviour, IPointerDownHandler
         player.currentMaskID = -1;
         inFace.SetActive(false);
         masksManager.SetActive(true);
+        qteBox.SetActive(true);
+        electricBox.SetActive(true);
       
         Debug.Log("masque retiré");
     }

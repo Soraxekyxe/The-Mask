@@ -14,6 +14,10 @@ public class EnnemiManager : MonoBehaviour
     private readonly List<CarréClickable> clickablesCarré = new();
     public QTEManager qteManager;
     public ElectricityManager electricityManager;
+
+    [Header("Désactiver")] 
+    public GameObject qteBox;
+    public GameObject electricBox;
     
     [Header("Commande")]
     public InputSystemUIInputModule mouseClick;
@@ -33,22 +37,6 @@ public class EnnemiManager : MonoBehaviour
         {
             if(ennemi != null && !ennemis.Contains(ennemi))
             ennemis.Add(ennemi);
-        }
-        
-        MaskRemove[] mask = FindObjectsOfType<MaskRemove>(true);
-        foreach (MaskRemove remove in mask)
-        {
-            if(remove != null && !removesMask.Contains(remove))
-                removesMask.Add(remove);
-        }
-        
-        CarréClickable[] carré = FindObjectsOfType<CarréClickable>(true);
-        foreach (CarréClickable Square in carré)
-        {
-            if (carré != null && !clickablesCarré.Contains(Square))
-                clickablesCarré.Add(Square);
-            
-            Debug.Log("square: " + Square);
         }
     }
 
@@ -98,12 +86,9 @@ public class EnnemiManager : MonoBehaviour
     {
         qteManager.CloseQTE();
         electricityManager.CloseCanvas();
-
-        foreach (CarréClickable Square in clickablesCarré)
-        {
-            if (Square != null)
-                Square.enabled = false;
-        }
+        
+        qteBox.SetActive(false);
+        electricBox.SetActive(false);
         
         foreach (MaskRemove removes in removesMask)
         {
