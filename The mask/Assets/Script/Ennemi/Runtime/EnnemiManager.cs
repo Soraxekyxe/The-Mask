@@ -104,7 +104,7 @@ public class EnnemiManager : MonoBehaviour
         foreach (MaskRemove removes in removesMask)
         {
             if(removes != null)
-            if (removes.inFace.activeSelf)
+            if(removes.inFace.activeSelf)
             {
                 removes.UnHoldMask();
                 
