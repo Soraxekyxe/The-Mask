@@ -71,7 +71,7 @@ public class Ennemi : MonoBehaviour
             //Le monstre est proche
             if (corridor == seconds)
             {
-                clip = monster.Sounds[Random.Range(0, monster.Sounds.Length)];
+                clip = monster.laugh;
                 if (clip != null)
                 {
                     scream.clip = clip;
@@ -130,7 +130,7 @@ public class Ennemi : MonoBehaviour
         Debug.Log("Screamer");
         
         //Ajoute le son du monstre data dans le l'AudioClip//
-        clip = monster.Sounds[0];
+        clip = monster.Scream;
         if (clip != null)
         {
             //Met le son dans l'audio source//

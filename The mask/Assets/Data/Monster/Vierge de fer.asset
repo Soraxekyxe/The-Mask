@@ -16,8 +16,8 @@ MonoBehaviour:
   monsterID: 1
   Distance: 10
   Walk: 8
+  laugh: {fileID: 8300000, guid: ad22bc5c1222c9243a3dad09fa91ca0a, type: 3}
   Scream: {fileID: 8300000, guid: ad22bc5c1222c9243a3dad09fa91ca0a, type: 3}
   Sounds:
-  - {fileID: 8300000, guid: ad22bc5c1222c9243a3dad09fa91ca0a, type: 3}
   - {fileID: 8300000, guid: 65841999f781507489775ae990ab5324, type: 3}
   - {fileID: 8300000, guid: 4caac71f2e9bb3e47ac720d9fdf1a4e6, type: 3}

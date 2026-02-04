@@ -55,6 +55,7 @@ public class EnnemiManager : MonoBehaviour
         }
         
         mouseClick.enabled = false;
+        electricityManager.PauseElectricity();
         Debug.Log("Souris ne marche plus");
 
         WaitMonsterLeave = StartCoroutine(WaitMonster());
@@ -77,6 +78,7 @@ public class EnnemiManager : MonoBehaviour
              
              ennemi.ResumeWalking();
          }
+         electricityManager.ResumeElectricity();
          
          Debug.Log("Remarché SVP");
     }
@@ -106,6 +108,7 @@ public class EnnemiManager : MonoBehaviour
             ennemi.StopWalking();
         }
         mouseClick.enabled = false;
+        electricityManager.PauseElectricity();
         WaitScreamer = StartCoroutine(waitScreamer());
 
     }
