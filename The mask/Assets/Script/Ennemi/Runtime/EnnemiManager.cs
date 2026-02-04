@@ -38,6 +38,15 @@ public class EnnemiManager : MonoBehaviour
             if(ennemi != null && !ennemis.Contains(ennemi))
             ennemis.Add(ennemi);
         }
+        
+        MaskRemove[] search = FindObjectsOfType<MaskRemove>(true);
+        {
+            foreach (MaskRemove remove in search)
+            {
+                if(remove != null && !removesMask.Contains(remove))
+                    removesMask.Add(remove);
+            }
+        }
     }
 
     //Arréte touts les ennemis de la scéne//
@@ -98,6 +107,9 @@ public class EnnemiManager : MonoBehaviour
             if (removes.inFace.activeSelf)
             {
                 removes.UnHoldMask();
+                
+                qteBox.SetActive(false);
+                electricBox.SetActive(false);
                  
                 Debug.Log("Monstre enléve le masque");
             }
