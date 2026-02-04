@@ -63,6 +63,7 @@ public class EnnemiManager : MonoBehaviour
         qteBox.SetActive(false);
         electricBox.SetActive(false);
         
+        electricityManager.PauseElectricity();
         mouseClick.enabled = false;
         electricityManager.PauseElectricity();
         Debug.Log("Souris ne marche plus");
@@ -82,6 +83,7 @@ public class EnnemiManager : MonoBehaviour
          }
          electricityManager.ResumeElectricity();
          
+         electricityManager.ResumeElectricity();
          Debug.Log("Remarché SVP");
     }
 
@@ -95,6 +97,7 @@ public class EnnemiManager : MonoBehaviour
         
         qteBox.SetActive(false);
         electricBox.SetActive(false);
+        electricityManager.PauseElectricity();
         
         foreach (MaskRemove removes in removesMask)
         {
