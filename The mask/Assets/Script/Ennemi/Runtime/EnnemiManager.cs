@@ -15,6 +15,9 @@ public class EnnemiManager : MonoBehaviour
     public QTEManager qteManager;
     public ElectricityManager electricityManager;
 
+    [Header("Cinématic")] 
+    public IronMaidenCinematic ironMaidenCinematic;
+
     [Header("Désactiver")] 
     public GameObject qteBox;
     public GameObject electricBox;
@@ -57,34 +60,24 @@ public class EnnemiManager : MonoBehaviour
             ennemi.StopWalking();
         }
         
-        foreach (CarréClickable Square in clickablesCarré)
-        {
-            if (Square != null)
-                Square.enabled = false;
-        }
+        qteBox.SetActive(false);
+        electricBox.SetActive(false);
         
         mouseClick.enabled = false;
         electricityManager.PauseElectricity();
         Debug.Log("Souris ne marche plus");
-
+        
         WaitMonsterLeave = StartCoroutine(WaitMonster());
     }
     
     //Sa permet d'attendre quelque seconde avant que le monstre part (cinématique qui désactive les commandes)//
     IEnumerator WaitMonster()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
          mouseClick.enabled = true;
 
          foreach (Ennemi ennemi in ennemis)
          {
-             if (ennemi != null && ennemi.ennemi != null && ennemi.ennemi.activeSelf)
-             {
-                 ennemi.ennemi.SetActive(false);
-                 
-                 Debug.Log("Je part");
-             }
-             
              ennemi.ResumeWalking();
          }
          electricityManager.ResumeElectricity();
@@ -95,6 +88,8 @@ public class EnnemiManager : MonoBehaviour
     //Lance la cinématique du screamer//
     public void HeScream()
     {
+        Debug.Log("Tu te lance ?");
+        
         qteManager.CloseQTE();
         electricityManager.CloseCanvas();
         
@@ -122,13 +117,13 @@ public class EnnemiManager : MonoBehaviour
         mouseClick.enabled = false;
         electricityManager.PauseElectricity();
         WaitScreamer = StartCoroutine(waitScreamer());
-
     }
 
     //Cinématique du screamer et lance le game over//
     IEnumerator waitScreamer()
     {
-        yield return new WaitForSeconds(15);
+        Debug.Log("Tu bug ?");
+        yield return new WaitForSeconds(3);
         
         GameOver();
     }

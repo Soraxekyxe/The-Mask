@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
@@ -11,6 +12,7 @@ public class Ennemi : MonoBehaviour
     public MonsterData monster;
     public EnnemiManager ennemiManager;
     public Player player;
+    public CinematicManager cinematicManager;
     
     [Header("Sprite")]
     public GameObject ennemi;
@@ -18,10 +20,12 @@ public class Ennemi : MonoBehaviour
     [Header("Audio")]
     public AudioClip clip;
     public AudioSource scream;
+    public AudioClip door;
 
     [Header("Son")] 
     public int firts;
     public int seconds;
+    public int thrid;
     
     [Header("Random variable move")]
     public int randomMax;
@@ -29,6 +33,10 @@ public class Ennemi : MonoBehaviour
     
     private Coroutine walking;
     int corridor;
+
+    private bool firtsSound;
+    private bool secondsSound;
+    private bool thridSound;
     
 
 
@@ -54,24 +62,9 @@ public class Ennemi : MonoBehaviour
             }
             
             //Le monstre est loin
-            if (corridor == firts)
+            if (!firtsSound && corridor == firts)
             {
                 clip = monster.Sounds[Random.Range(0, monster.Sounds.Length)];
-                if (clip != null)
-                {
-                    scream.clip = clip;
-                    scream.volume = 0.05f;
-                    
-                    scream.Play();
-                    
-                    Debug.Log("Ennemi Scream");
-                }
-            }
-            
-            //Le monstre est proche
-            if (corridor == seconds)
-            {
-                clip = monster.laugh;
                 if (clip != null)
                 {
                     scream.clip = clip;
@@ -79,8 +72,41 @@ public class Ennemi : MonoBehaviour
                     
                     scream.Play();
                     
-                    Debug.Log("Ennemi et proche");
+                    Debug.Log("Ennemi Scream");
                 }
+                
+                firtsSound = true;
+            }
+            
+            //Le monstre est proche
+            if (!secondsSound && corridor == seconds)
+            {
+                clip = monster.Sounds[Random.Range(0, monster.Sounds.Length)];
+                if (clip != null)
+                {
+                    scream.clip = clip;
+                    scream.volume = 0.25f;
+                    
+                    scream.Play();
+                    
+                    Debug.Log("Ennemi est proche");
+                }
+                secondsSound = true;
+            }
+
+            if (!thridSound && corridor == thrid)
+            {
+                clip = monster.laugh;
+                if (clip != null)
+                    {
+                    scream.clip = clip;
+                    scream.volume = 1f;
+                    
+                    scream.Play();
+                    
+                    Debug.Log("Ennemi est à côté");
+                    }
+                thridSound = true;
             }
             
             //regarde si le monstre est arrivé dans la salle//
@@ -88,6 +114,20 @@ public class Ennemi : MonoBehaviour
             {
                 corridor = 0;
                 Debug.Log($"Corridor = {corridor}");
+
+                if (door != null)
+                {
+                    scream.clip = door;
+                    scream.volume = 1f;
+                    
+                    scream.Play();
+                }
+                
+                firtsSound = false;
+                secondsSound = false;
+                thridSound = false;
+                
+                yield return new WaitForSecondsRealtime(3f);
                 
                 MaskCheck();
             }
@@ -114,11 +154,7 @@ public class Ennemi : MonoBehaviour
     //Lorsque le joueur porte le bon masque//
     void Safe()
     {
-        Debug.Log("Safe");
-
-        if (ennemi != null)
-            ennemi.SetActive(true);
-        
+        cinematicManager.PlayCinematic();
         ennemiManager.Stop();
         
         Debug.Log("Safe");
@@ -149,7 +185,14 @@ public class Ennemi : MonoBehaviour
     //Arréte le déplacement du monstre//
     public void StopWalking()
     {
-        StopCoroutine(walking);
+        
+        if (walking != null)
+        {
+            StopCoroutine(walking);
+            walking = null;
+            Debug.Log("Stop walking");
+        }
+        
     }
     
     //Relance la marche//
