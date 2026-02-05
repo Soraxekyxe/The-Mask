@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 4d459c954dd27d541be97c1984ed9983
+guid: c4fe0688f2fa2074ba2c9ecb81c48b87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5122919455072635010
-    second: UI_HomeBlue_GameJam_0
+      213: -5171446098052491696
+    second: Masque_Demon_Pivote_0
+  - first:
+      213: -7384843667620741178
+    second: Masque_Demon_Pivote_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +90,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_HomeBlue_GameJam_0
+      name: Masque_Demon_Pivote_0
       rect:
         serializedVersion: 2
-        x: 190
-        y: 381
-        width: 578
-        height: 279
+        x: 31
+        y: 0
+        width: 830
+        height: 818
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e773573e5ebb7e8b0800000000000000
-      internalID: -5122919455072635010
+      spriteID: 056508e5c255b38b0800000000000000
+      internalID: -5171446098052491696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Masque_Demon_Pivote_1
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 815
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cf3ca59fc3c38990800000000000000
+      internalID: -7384843667620741178
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_HomeBlue_GameJam_0: -5122919455072635010
+      Masque_Demon_Pivote_0: -5171446098052491696
+      Masque_Demon_Pivote_1: -7384843667620741178
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

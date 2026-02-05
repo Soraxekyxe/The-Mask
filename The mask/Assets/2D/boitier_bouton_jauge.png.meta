@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4d459c954dd27d541be97c1984ed9983
+guid: 6763257e2f1b14a48b443bab5677bafc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5122919455072635010
-    second: UI_HomeBlue_GameJam_0
+      213: -4574555640008271004
+    second: boitier_bouton_jauge_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +87,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_HomeBlue_GameJam_0
+      name: boitier_bouton_jauge_0
       rect:
         serializedVersion: 2
-        x: 190
-        y: 381
-        width: 578
-        height: 279
+        x: 28
+        y: 141
+        width: 1568
+        height: 1696
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e773573e5ebb7e8b0800000000000000
-      internalID: -5122919455072635010
+      spriteID: 46b1c08e1e9e380c0800000000000000
+      internalID: -4574555640008271004
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_HomeBlue_GameJam_0: -5122919455072635010
+      boitier_bouton_jauge_0: -4574555640008271004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

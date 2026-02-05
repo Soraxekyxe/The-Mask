@@ -12,6 +12,12 @@ public class QTEManager : MonoBehaviour
     [Header("Progress")]
     public bool keepProgressWhenClosed = true;
     
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip successClip;
+    public AudioClip errorClip;
+
+    
     [Header("Canvases")]
     public GameObject qteCanvas;
     public GameObject winCanvas;
@@ -53,6 +59,12 @@ public class QTEManager : MonoBehaviour
 
         if (qteCanvas != null) qteCanvas.SetActive(false);
         if (winCanvas != null) winCanvas.SetActive(false);
+        if (audioSource != null)
+        {
+            audioSource.playOnAwake = false;
+            audioSource.loop = false;
+        }
+
     }
 
     void Update()
@@ -164,7 +176,12 @@ public class QTEManager : MonoBehaviour
         if (inputDir == expected)
         {
             spawnedUI[index].SetCorrect();
+
+            if (audioSource != null && successClip != null)
+                audioSource.PlayOneShot(successClip);
+
             index++;
+
 
             if (index >= sequence.Count)
             {
@@ -183,6 +200,10 @@ public class QTEManager : MonoBehaviour
         else
         {
             spawnedUI[index].SetWrong();
+
+            if (audioSource != null && errorClip != null)
+                audioSource.PlayOneShot(errorClip);
+
             StartCoroutine(RestartCurrentStepAfterDelay());
         }
     }
