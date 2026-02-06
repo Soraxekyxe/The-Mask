@@ -15,6 +15,9 @@ public class ElectricityManager : MonoBehaviour
     [Header("Global Darkness")]
     public Image globalDarkOverlay;
     public Image vignetteOverlay;
+    
+    [Header("Recharge Sound")]
+    public AudioSource rechargeSound;
 
     [Header("Settings")]
     public float maxElectricity = 100f;
@@ -26,27 +29,27 @@ public class ElectricityManager : MonoBehaviour
     [Header("Darkness Curve")]
     public AnimationCurve darknessCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
-    [Header("Lose / Screamer")]
+    [Header("Lose / Scene")]
     public string defeatSceneName = "SceneLose";
-    public GameObject screamerOverlay;     // SetActive(false) au départ
-    public AudioSource screamerSound;      // Play On Awake = OFF
     public float screamerDuration = 2f;
+
+    [System.Serializable]
+    public class Screamer
+    {
+        public GameObject overlay;   // l'image/overlay du screamer (SetActive(false) au départ)
+        public AudioSource sound;    // AudioSource avec le son correspondant (Play On Awake OFF)
+    }
+
+    [Header("Screamers (4)")]
+    public Screamer[] screamers; // mets taille 4 dans l'inspector
 
     private float currentElectricity;
     private bool isHolding = false;
     private bool isDead = false;
-    
     private bool isPaused = false;
 
     void Awake()
     {
-        // sécurité son
-        if (screamerSound != null)
-        {
-            screamerSound.playOnAwake = false;
-            screamerSound.Stop();
-        }
-
         currentElectricity = maxElectricity;
         electricitySlider.maxValue = maxElectricity;
         electricitySlider.value = currentElectricity;
@@ -54,9 +57,31 @@ public class ElectricityManager : MonoBehaviour
         quitButton.onClick.AddListener(CloseCanvas);
 
         if (electricityCanvas != null) electricityCanvas.SetActive(false);
-        if (screamerOverlay != null) screamerOverlay.SetActive(false);
+
+        // sécurité: tout éteindre au départ
+        if (screamers != null)
+        {
+            for (int i = 0; i < screamers.Length; i++)
+            {
+                if (screamers[i].overlay != null)
+                    screamers[i].overlay.SetActive(false);
+
+                if (screamers[i].sound != null)
+                {
+                    screamers[i].sound.playOnAwake = false;
+                    screamers[i].sound.loop = false;
+                    screamers[i].sound.Stop();
+                }
+            }
+        }
+        if (rechargeSound != null)
+        {
+            rechargeSound.playOnAwake = false;
+            rechargeSound.loop = true;
+            rechargeSound.Stop();
+        }
     }
-    
+
     void Update()
     {
         if (isDead || isPaused) return;
@@ -67,7 +92,6 @@ public class ElectricityManager : MonoBehaviour
         if (currentElectricity <= 0f)
             StartCoroutine(LoseSequence());
     }
-
 
     private void DrainElectricity()
     {
@@ -101,8 +125,21 @@ public class ElectricityManager : MonoBehaviour
         }
     }
 
-    public void HoldButtonDown() => isHolding = true;
-    public void HoldButtonUp() => isHolding = false;
+    public void HoldButtonDown()
+    {
+        isHolding = true;
+
+        if (rechargeSound != null && !rechargeSound.isPlaying)
+            rechargeSound.Play();
+    }
+
+    public void HoldButtonUp()
+    {
+        isHolding = false;
+
+        if (rechargeSound != null && rechargeSound.isPlaying)
+            rechargeSound.Stop();
+    }
 
     public void OpenCanvas()
     {
@@ -115,26 +152,58 @@ public class ElectricityManager : MonoBehaviour
     {
         if (electricityCanvas != null) electricityCanvas.SetActive(false);
         isHolding = false;
+
+        if (rechargeSound != null && rechargeSound.isPlaying)
+            rechargeSound.Stop();
+
         UIState.IsAnyPopupOpen = false;
     }
+
 
     private IEnumerator LoseSequence()
     {
         if (isDead) yield break;
         isDead = true;
+
         if (electricityCanvas != null) electricityCanvas.SetActive(false);
-        if (screamerOverlay != null) screamerOverlay.SetActive(true);
-        if (screamerSound != null) screamerSound.Play();
+        
+        if (rechargeSound != null && rechargeSound.isPlaying)
+            rechargeSound.Stop();
+
+        // choisir un screamer aléatoire
+        if (screamers != null && screamers.Length > 0)
+        {
+            int idx = Random.Range(0, screamers.Length);
+            var chosen = screamers[idx];
+
+            // éteindre tous les overlays au cas où
+            for (int i = 0; i < screamers.Length; i++)
+            {
+                if (screamers[i].overlay != null)
+                    screamers[i].overlay.SetActive(false);
+            }
+
+            if (chosen.overlay != null)
+                chosen.overlay.SetActive(true);
+
+            if (chosen.sound != null)
+                chosen.sound.Play();
+        }
+
         yield return new WaitForSeconds(screamerDuration);
+
         LevelSession.Stop();
         UIState.IsAnyPopupOpen = false;
         SceneManager.LoadScene(defeatSceneName);
     }
-    
+
     public void PauseElectricity()
     {
         isPaused = true;
         isHolding = false;
+
+        if (rechargeSound != null && rechargeSound.isPlaying)
+            rechargeSound.Stop();
     }
 
     public void ResumeElectricity()
