@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 74546dc067d58844d9b07bc274907fc9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8388226224083528894
+    second: ScreamerAnge_0
+  - first:
+      213: 6309319493819873416
+    second: ScreamerAnge_1
+  - first:
+      213: -6920057926379075444
+    second: ScreamerAnge_2
+  - first:
+      213: -3679287901929829946
+    second: ScreamerAnge_3
+  - first:
+      213: -8675518405528132588
+    second: ScreamerAnge_4
+  - first:
+      213: 6033174693923928557
+    second: ScreamerAnge_5
+  - first:
+      213: 4281038913320306947
+    second: ScreamerAnge_6
+  - first:
+      213: -7075287104817473051
+    second: ScreamerAnge_7
+  - first:
+      213: -7958933276391909458
+    second: ScreamerAnge_8
+  - first:
+      213: -194936864281725591
+    second: ScreamerAnge_9
+  - first:
+      213: -7040062697783849493
+    second: ScreamerAnge_10
+  - first:
+      213: 2457149933557454660
+    second: ScreamerAnge_11
+  - first:
+      213: 8776688255066665432
+    second: ScreamerAnge_12
+  - first:
+      213: 7436809138767236021
+    second: ScreamerAnge_13
+  - first:
+      213: 7917401555924589204
+    second: ScreamerAnge_14
+  - first:
+      213: -5924027385487270476
+    second: ScreamerAnge_15
+  - first:
+      213: 5196463439102827254
+    second: ScreamerAnge_16
+  - first:
+      213: 8557304328253205335
+    second: ScreamerAnge_17
+  - first:
+      213: 8676933411233183476
+    second: ScreamerAnge_18
+  - first:
+      213: 8808950000158615267
+    second: ScreamerAnge_19
+  - first:
+      213: -6590233033375838375
+    second: ScreamerAnge_20
+  - first:
+      213: 5513638219133957775
+    second: ScreamerAnge_21
+  - first:
+      213: 2447037016228279539
+    second: ScreamerAnge_22
+  - first:
+      213: -886928826842153227
+    second: ScreamerAnge_23
+  - first:
+      213: -2644549313017939470
+    second: ScreamerAnge_24
+  - first:
+      213: -2458947360317615608
+    second: ScreamerAnge_25
+  - first:
+      213: 8424069596751504908
+    second: ScreamerAnge_26
+  - first:
+      213: -8133086685332155006
+    second: ScreamerAnge_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ScreamerAnge_0
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 2107
+        width: 48
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc6d1ede47f86470800000000000000
+      internalID: 8388226224083528894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_1
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 2112
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888b493c6a43f8750800000000000000
+      internalID: 6309319493819873416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_2
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 2117
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c888c01eaf307ff90800000000000000
+      internalID: -6920057926379075444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_3
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 2111
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9841b952b80fcc0800000000000000
+      internalID: -3679287901929829946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_4
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 2070
+        width: 57
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 414e12c99fd5a9780800000000000000
+      internalID: -8675518405528132588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_5
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 2110
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de936334b642ab350800000000000000
+      internalID: 6033174693923928557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_6
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 2116
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309c412b53e496b30800000000000000
+      internalID: 4281038913320306947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_7
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 2116
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e9d3795dd78fcd90800000000000000
+      internalID: -7075287104817473051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_8
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 2110
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7df957a503c8190800000000000000
+      internalID: -7958933276391909458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_9
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 2069
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965fbda64f17b4df0800000000000000
+      internalID: -194936864281725591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_10
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 2109
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bed8d16b64cac4e90800000000000000
+      internalID: -7040062697783849493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_11
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 2091
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447119598dc891220800000000000000
+      internalID: 2457149933557454660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_12
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 2070
+        width: 54
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d17793977f0dc970800000000000000
+      internalID: 8776688255066665432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_13
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 2072
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb8992828ad43760800000000000000
+      internalID: 7436809138767236021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_14
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 2076
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a920554c240ed60800000000000000
+      internalID: 7917401555924589204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_15
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 2074
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd5850da70a9cda0800000000000000
+      internalID: -5924027385487270476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_16
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 106
+        width: 2052
+        height: 1932
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fa570047fb8d1840800000000000000
+      internalID: 5196463439102827254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_17
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 107
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75be170b2f6a1c670800000000000000
+      internalID: 8557304328253205335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_18
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 112
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f6b54417f8aa6870800000000000000
+      internalID: 8676933411233183476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_19
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 112
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6a1a37a5daf3a70800000000000000
+      internalID: 8808950000158615267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_20
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 166
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f869209f9ca84a0800000000000000
+      internalID: -6590233033375838375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_21
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 166
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f863f7f6fb0648c40800000000000000
+      internalID: 5513638219133957775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_22
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 166
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4b488833f95f120800000000000000
+      internalID: 2447037016228279539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_23
+      rect:
+        serializedVersion: 2
+        x: 1833
+        y: 140
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fef40f5eeef0b3f0800000000000000
+      internalID: -886928826842153227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_24
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 161
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f9ff86496cac4bd0800000000000000
+      internalID: -2644549313017939470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_25
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 8
+        width: 108
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80252e2676010edd0800000000000000
+      internalID: -2458947360317615608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_26
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 8
+        width: 155
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06aa856aae48e470800000000000000
+      internalID: 8424069596751504908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreamerAnge_27
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 10
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285515920c8712f80800000000000000
+      internalID: -8133086685332155006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ScreamerAnge_0: 8388226224083528894
+      ScreamerAnge_1: 6309319493819873416
+      ScreamerAnge_10: -7040062697783849493
+      ScreamerAnge_11: 2457149933557454660
+      ScreamerAnge_12: 8776688255066665432
+      ScreamerAnge_13: 7436809138767236021
+      ScreamerAnge_14: 7917401555924589204
+      ScreamerAnge_15: -5924027385487270476
+      ScreamerAnge_16: 5196463439102827254
+      ScreamerAnge_17: 8557304328253205335
+      ScreamerAnge_18: 8676933411233183476
+      ScreamerAnge_19: 8808950000158615267
+      ScreamerAnge_2: -6920057926379075444
+      ScreamerAnge_20: -6590233033375838375
+      ScreamerAnge_21: 5513638219133957775
+      ScreamerAnge_22: 2447037016228279539
+      ScreamerAnge_23: -886928826842153227
+      ScreamerAnge_24: -2644549313017939470
+      ScreamerAnge_25: -2458947360317615608
+      ScreamerAnge_26: 8424069596751504908
+      ScreamerAnge_27: -8133086685332155006
+      ScreamerAnge_3: -3679287901929829946
+      ScreamerAnge_4: -8675518405528132588
+      ScreamerAnge_5: 6033174693923928557
+      ScreamerAnge_6: 4281038913320306947
+      ScreamerAnge_7: -7075287104817473051
+      ScreamerAnge_8: -7958933276391909458
+      ScreamerAnge_9: -194936864281725591
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
