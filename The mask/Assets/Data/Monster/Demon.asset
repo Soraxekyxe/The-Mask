@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3277d952f7f84a84d8af302a633f27cc, type: 3}
+  m_Name: Demon
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
+  Name: Demon
+  monsterID: 4
+  Distance: 10
+  Walk: 5
+  laugh: {fileID: 8300000, guid: c34ff535656031148977fccf972900f5, type: 3}
+  Scream: {fileID: 8300000, guid: a51ee0087a039ba46acfca75390a55be, type: 3}
+  Sounds:
+  - {fileID: 8300000, guid: c0f30a785c483574e84aaaf0aa4c7924, type: 3}
+  - {fileID: 8300000, guid: 4cda1cf97d1b7f346a8b2a2d988ad6d0, type: 3}

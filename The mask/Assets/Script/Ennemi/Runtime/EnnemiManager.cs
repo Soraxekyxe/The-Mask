@@ -31,6 +31,9 @@ public class EnnemiManager : MonoBehaviour
     [Header("Coroutine")]
     private Coroutine WaitMonsterLeave;
     private Coroutine WaitScreamer;
+    
+    public AudioClip closeDoor;
+    public AudioSource audio;
 
     void Start()
     {
@@ -81,10 +84,33 @@ public class EnnemiManager : MonoBehaviour
          {
              ennemi.ResumeWalking();
          }
+         
+         foreach (MaskRemove removes in removesMask)
+         {
+             if(removes != null)
+                 if(removes.inFace.activeSelf)
+                 {
+                     removes.UnHoldMask();
+                
+                     qteBox.SetActive(true);
+                     electricBox.SetActive(true);
+                 
+                     Debug.Log("Monstre enléve le masque");
+                 }
+         }
+         
+         if (closeDoor != null)
+         {
+             audio.clip = closeDoor;
+             audio.Play();
+         }
+         
          electricityManager.ResumeElectricity();
          
          electricityManager.ResumeElectricity();
          Debug.Log("Remarché SVP");
+         
+         
     }
 
     //Lance la cinématique du screamer//

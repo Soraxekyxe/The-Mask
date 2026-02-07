@@ -9,6 +9,7 @@ public class ClownCinematic : MonoBehaviour
     public Vector3 startEuler;
     public Vector3 endEuler;
     public float duration = 3f;
+    
 
     public void play()
     {
@@ -44,6 +45,7 @@ public class ClownCinematic : MonoBehaviour
         // Fin
         clownSprite.transform.rotation = qStart;
         clownSprite.SetActive(false);
+        
     }
 }
 

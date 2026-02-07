@@ -96,7 +96,7 @@ public class Ennemi : MonoBehaviour
 
             if (!thridSound && corridor == thrid)
             {
-                clip = monster.laugh;
+                clip = monster.Sounds[Random.Range(0, monster.Sounds.Length)];
                 if (clip != null)
                     {
                     scream.clip = clip;
@@ -112,8 +112,22 @@ public class Ennemi : MonoBehaviour
             //regarde si le monstre est arrivé dans la salle//
             if (corridor == monster.Distance)
             {
+                clip = monster.laugh;
+                if (clip != null)
+                {
+                    scream.clip = clip;
+                    scream.volume = 1f;
+                    
+                    scream.Play();
+                    
+                    Debug.Log("Ennemi est à côté");
+                }
+                
                 corridor = 0;
                 Debug.Log($"Corridor = {corridor}");
+                
+                yield return new WaitForSeconds(3f);
+                
 
                 if (door != null)
                 {

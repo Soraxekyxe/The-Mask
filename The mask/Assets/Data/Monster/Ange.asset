@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3277d952f7f84a84d8af302a633f27cc, type: 3}
+  m_Name: Ange
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
+  Name: Ange
+  monsterID: 3
+  Distance: 9
+  Walk: 4
+  laugh: {fileID: 8300000, guid: 7c1dbb6672809b84ab44a12bf339707f, type: 3}
+  Scream: {fileID: 8300000, guid: 24c893ea50a3cb4489adeae8ce4b601a, type: 3}
+  Sounds:
+  - {fileID: 8300000, guid: bbf189f574dec5847be4bd65d856866c, type: 3}
+  - {fileID: 8300000, guid: aa14bbe983697174f854577e51a7ccd6, type: 3}
