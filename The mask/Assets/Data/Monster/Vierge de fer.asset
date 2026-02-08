@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterData
   Name: Vierge de fer
   monsterID: 1
-  Distance: 14
-  Walk: 7
+  Distance: 0
+  maxWalk: 0
+  minWalk: 0
   laugh: {fileID: 8300000, guid: ad22bc5c1222c9243a3dad09fa91ca0a, type: 3}
   Scream: {fileID: 8300000, guid: 32db136c6e6c9844089c12f61f4d64ff, type: 3}
   Sounds:

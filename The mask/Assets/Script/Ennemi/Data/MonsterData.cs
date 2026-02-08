@@ -4,10 +4,17 @@ using UnityEngine.UIElements;
 [CreateAssetMenu(fileName = "MonsterData", menuName = "Scriptable Objects/MonsterData")]
 public class MonsterData : ScriptableObject
 {
+    [Header("Info")]
     public string Name;
     public int monsterID;
+    
+    [Header("Variables")]
     public float Distance;
-    public float Walk;
+    public float maxWalk;
+    public float minWalk;
+    
+    
+    [Header("Sounds")]
     public AudioClip laugh;
     public AudioClip Scream;
 

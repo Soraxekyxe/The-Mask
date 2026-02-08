@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterData
   Name: Demon
   monsterID: 4
-  Distance: 10
-  Walk: 5
+  Distance: 0
+  maxWalk: 0
+  minWalk: 0
   laugh: {fileID: 8300000, guid: c34ff535656031148977fccf972900f5, type: 3}
   Scream: {fileID: 8300000, guid: a51ee0087a039ba46acfca75390a55be, type: 3}
   Sounds:

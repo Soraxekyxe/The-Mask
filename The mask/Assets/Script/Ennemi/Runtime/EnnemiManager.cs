@@ -31,6 +31,22 @@ public class EnnemiManager : MonoBehaviour
     [Header("Coroutine")]
     private Coroutine WaitMonsterLeave;
     private Coroutine WaitScreamer;
+    private Coroutine WalkMonsters;
+
+    [Header("Variable Walking")] 
+    public int corridor;
+    public int whoWalk;
+    
+    [Header("Variable Sounds")]
+    public int firtsSound;
+    public int secondSound;
+    public int thirdSound;
+    
+   [Header("Variable Random for who walk")] 
+    public int randomMax;
+    public int randomMin;
+
+    public bool stopRandom;
     
     public AudioClip closeDoor;
     public AudioSource audio;
@@ -52,6 +68,103 @@ public class EnnemiManager : MonoBehaviour
                 if(remove != null && !removesMask.Contains(remove))
                     removesMask.Add(remove);
             }
+        }
+
+        WalkMonsters = StartCoroutine(WalkInCorridor());
+    }
+
+    IEnumerator WalkInCorridor()
+    {
+        while(true)
+        {
+            if (stopRandom == false)
+            {
+                whoWalk = Random.Range(randomMin, randomMax);
+                Debug.Log($"WhoWalk = {whoWalk}" );
+            }
+            
+            foreach (Ennemi ennemi in ennemis)
+            {
+                if (whoWalk >= ennemi.monster.minWalk && whoWalk <= ennemi.monster.maxWalk)
+                {
+                    ennemi.monster.Distance++;
+                    Debug.Log($"Ennemi distance = {ennemi.monster.Distance}");
+                }
+
+                if (ennemi.monster.Distance == firtsSound)
+                {
+                    ennemi.clip = ennemi.monster.Sounds[Random.Range(0, ennemi.monster.Sounds.Length)];
+                    if (ennemi.clip != null)
+                    {
+                        ennemi.scream.clip = ennemi.clip;
+                        ennemi.scream.volume = 0.15f;
+                    
+                        ennemi.scream.Play();
+                        
+                        Debug.Log("Ennemi firts sound");
+                    }
+                    
+                    stopRandom = true;
+                    Debug.Log($"stopRandom = {stopRandom}");
+                    
+                    yield return new WaitForSeconds(3f);
+                }
+                
+                stopRandom = false;
+
+                if (ennemi.monster.Distance == secondSound)
+                {
+                    ennemi.clip = ennemi.monster.Sounds[Random.Range(0, ennemi.monster.Sounds.Length)];
+                    if (ennemi.clip != null)
+                    {
+                        ennemi.scream.clip = ennemi.clip;
+                        ennemi.scream.volume = 0.15f;
+                    
+                        ennemi.scream.Play();
+                    
+                        Debug.Log("Ennemi second sound");
+                    }
+                    
+                    stopRandom = true;
+                    Debug.Log($"stopRandom = {stopRandom}");
+                    
+                    yield return new WaitForSeconds(3f);
+                }
+                
+                stopRandom = false;
+
+                if (ennemi.monster.Distance == thirdSound)
+                {
+                    ennemi.clip = ennemi.monster.Sounds[Random.Range(0, ennemi.monster.Sounds.Length)];
+                    if (ennemi.clip != null)
+                    {
+                        ennemi.scream.clip = ennemi.clip;
+                        ennemi.scream.volume = 0.15f;
+                    
+                        ennemi.scream.Play();
+                    
+                        Debug.Log("Ennemi third sound");
+                    }
+                    
+                    stopRandom = true;
+                    Debug.Log($"stopRandom = {stopRandom}");
+                    
+                    yield return new WaitForSeconds(3f);
+                }
+                
+                stopRandom = false;
+
+                if (ennemi.monster.Distance == corridor)
+                {
+                    ennemi.monster.Distance = 0;
+                    Debug.Log($"[{ennemi.monster.name}] =" + ennemi.monster.Distance);
+                    
+                    StopCoroutine(WalkInCorridor());
+                    
+                    ennemi.MaskCheck();
+                }
+            }
+            yield return new WaitForSeconds(2);
         }
     }
 
@@ -80,10 +193,7 @@ public class EnnemiManager : MonoBehaviour
         yield return new WaitForSeconds(10);
          mouseClick.enabled = true;
 
-         foreach (Ennemi ennemi in ennemis)
-         {
-             ennemi.ResumeWalking();
-         }
+         WalkMonsters = StartCoroutine(WalkInCorridor());
          
          foreach (MaskRemove removes in removesMask)
          {

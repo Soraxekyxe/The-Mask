@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterData
   Name: Ange
   monsterID: 3
-  Distance: 9
-  Walk: 4
+  Distance: 0
+  maxWalk: 0
+  minWalk: 0
   laugh: {fileID: 8300000, guid: 7c1dbb6672809b84ab44a12bf339707f, type: 3}
   Scream: {fileID: 8300000, guid: 24c893ea50a3cb4489adeae8ce4b601a, type: 3}
   Sounds:

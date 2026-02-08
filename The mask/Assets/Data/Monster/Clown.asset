@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterData
   Name: Cube
   monsterID: 2
-  Distance: 10
-  Walk: 5
+  Distance: 0
+  maxWalk: 0
+  minWalk: 0
   laugh: {fileID: 8300000, guid: b232636aa5b4bfd49be027aba8d581ed, type: 3}
   Scream: {fileID: 8300000, guid: 67be2ae55e42af447beed3d18434cf8a, type: 3}
   Sounds:
